@@ -1,0 +1,15 @@
+﻿<Application x:Class="StarPan.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StarPan"
+             xmlns:local1="clr-namespace:StarPan.Model"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <local1:DateTimeConvert x:Key="DateTimeToString"/>
+
+        <SolidColorBrush x:Key="ElementCheck" Color="#E6F6FF"/>
+        <SolidColorBrush x:Key="Border.Split" Color="#E6E6E6"/>
+        <SolidColorBrush x:Key="Font.Color" Color="#FF484647"/>
+        <SolidColorBrush x:Key="Font.NotSelect" Color="#707070"/>
+    </Application.Resources>
+</Application>

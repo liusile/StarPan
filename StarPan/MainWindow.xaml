@@ -1,0 +1,144 @@
+﻿<Window x:Class="StarPan.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StarPan"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1260" MinWidth="1260" MinHeight="700" WindowStyle="None" AllowsTransparency="True" >
+
+    <Window.Resources>
+        <Style x:Key="TopFunctionStytle" TargetType="{x:Type RadioButton}">
+            <Setter Property="Background" Value="#EEF0F6"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontFamily" Value="Modern No. 20"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontStretch" Value="Expanded"></Setter>
+            <Setter Property="Foreground" Value="#FF484647"></Setter>
+            <Setter Property="Margin" Value="2 0 25 0"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <StackPanel Margin="0 10 0 0">
+                            <ContentPresenter HorizontalAlignment="Center"></ContentPresenter>
+                            <Border BorderThickness="1" BorderBrush="{TemplateBinding Background}" Margin="0 10 0 0" ></Border>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Foreground" Value="#64C5FB" />
+                                <Setter Property="Background" Value="#64C5FB" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Foreground" Value="#64C5FB" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top"  Background="#EEF0F6"  Height="63"  MouseDown="DockPanel_MouseDown">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <Image Source="image/LoginDlg/login_logo.png" Width="138" Height="32" Margin="20 0 50 0"></Image>
+                    <RadioButton x:Name="MyPan" IsChecked="True"  Content="我的网盘"  Style="{StaticResource TopFunctionStytle}" Click="MyPan_Click"/>
+                    <RadioButton x:Name="DoloadList" Content="传输列表"  Style="{StaticResource  TopFunctionStytle}" />
+                    <RadioButton x:Name="FriendSharing" Content="好友分享"  Style="{StaticResource  TopFunctionStytle}" Click="FriendSharing_Click" />
+                    <RadioButton x:Name="FunctionBox" Content="功能宝箱"  Style="{StaticResource  TopFunctionStytle}"  Click="FunctionBox_Click" />
+                    <RadioButton x:Name="FindResource" Content="找资源"  Style="{StaticResource  TopFunctionStytle}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Right" DockPanel.Dock="Right" >
+
+                    <Image Source="image\head.png" Width="20" Margin="10 0 0 0" ></Image>
+                    <TextBlock Text="连思达" Margin="10 5 0 0"></TextBlock>
+                    <Image  Width="20" Margin="8 0 0 0" >
+                        <Image.Resources>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="image\huiyuan.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="image/huiyuanActive.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Resources>
+                    </Image>
+
+                    <Border BorderThickness="1" BorderBrush="#F7D07D" Background="#F7D07D" Padding="3" CornerRadius="10"  Margin="15 0 0 0">
+                        <TextBlock Text="会员中心"></TextBlock>
+                    </Border>
+
+                    <Image Width="20" Margin="15 0 0 0" >
+                        <Image.Resources>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="image\mail.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="image/mailActive.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Resources>
+                    </Image>
+                    <Image  Width="20" Margin="10 0 0 0" >
+                        <Image.Resources>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="image\setting.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="image/settingActive.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Resources>
+                    </Image>
+
+                    <Image Source="image\line.png" Width="15" Margin="10 0 0 0" ></Image>
+                    <Image x:Name="minFrm"  Width="15" Margin="10 0 0 0" MouseDown="minFrm_MouseDown" >
+                        <Image.Resources>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="image\MinFrm.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="image/MinFrmActive.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Resources>
+                    </Image>
+                    <Image Width="15" Margin="10 0 0 0" x:Name="SizeChange" MouseDown="SizeChange_MouseDown" >
+                        <Image.Resources>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="image/maxFrm.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="image/maxFrmActive.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Resources>
+                    </Image>
+                    <Image Width="15"  Margin="10 0 10 0" MouseDown="Image_MouseDown">
+                        <Image.Resources>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="image/Close.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Source" Value="image/CloseActive.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Resources>
+                    </Image>
+                </StackPanel>
+            </DockPanel>
+        </DockPanel>
+        <DockPanel Margin="0,-2,0,0">
+            <Separator BorderThickness="1" BorderBrush="{StaticResource Border.Split}"></Separator>
+            <Frame x:Name="FrameContent" Source="SubPage/MyPanPage.xaml" NavigationUIVisibility="Hidden" Background="#FFFFFF"></Frame>
+        </DockPanel>
+    </DockPanel>
+</Window>

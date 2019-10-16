@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7DFE8B93-2B54-464D-A9A9-CB3697F5501F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StarPan</RootNamespace>
+    <AssemblyName>我家网盘</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SkyDrive_128px_1156945_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\DateTimeConvert.cs" />
+    <Compile Include="Model\FileInfo.cs" />
+    <Compile Include="Model\FileType.cs" />
+    <Compile Include="Model\Menus.cs" />
+    <Compile Include="Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\FunctionBoxPage.xaml.cs">
+      <DependentUpon>FunctionBoxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\MyPanPage.xaml.cs">
+      <DependentUpon>MyPanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\SharePage.xaml.cs">
+      <DependentUpon>SharePage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\FunctionBoxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\MyPanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\SharePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\AutoUpdateDlg\header.png" />
+    <Resource Include="image\AutoupgradeSvipTipDlg\ClostBtn.png" />
+    <Resource Include="image\AutoupgradeSvipTipDlg\Guide.png" />
+    <Resource Include="image\AutoupgradeSvipTipDlg\KnownBtn.png" />
+    <Resource Include="image\AutoupgradeSvipTipDlg\MaskBg.png" />
+    <Resource Include="image\BackupUnlockDlg\backup_unlock_banner.png" />
+    <Resource Include="image\BackupUnlockDlg\upgrade_btn.png" />
+    <Resource Include="image\BackupUpdateDlg\backup_update_banner.png" />
+    <Resource Include="image\BackupUpdateDlg\backup_update_expired.png" />
+    <Resource Include="image\BackupUpdateDlg\btn_close.png" />
+    <Resource Include="image\BackupUpdateDlg\btn_grey.png" />
+    <Resource Include="image\BackupUpdateDlg\btn_red.png" />
+    <Resource Include="image\BackupUpdateDlg\btn_red_discount.png" />
+    <Resource Include="image\BackupUpdateDlg\MaskBg.png" />
+    <Resource Include="image\BatchUploadPrivilegeDlg\BatchUploadPrivilegeGuide.png" />
+    <Resource Include="image\BatchUploadPrivilegeDlg\VipBtn.png" />
+    <Resource Include="image\common\button\button.png" />
+    <Resource Include="image\common\button\default_button.png" />
+    <Resource Include="image\common\checkbox\btn_wnd_checkbox.png" />
+    <Resource Include="image\common\checkbox\btn_wnd_radio.png" />
+    <Resource Include="image\common\checkbox\check.png" />
+    <Resource Include="image\common\checkbox\focus_checkbox.png" />
+    <Resource Include="image\common\checkbox\focus_radio.png" />
+    <Resource Include="image\common\checkbox\TreeCheckBox.png" />
+    <Resource Include="image\common\combobox\dropbtn.png" />
+    <Resource Include="image\common\edit\img_edit_border.png" />
+    <Resource Include="image\common\edit\img_edit_border_set.png" />
+    <Resource Include="image\common\list\item_bg_hover.png" />
+    <Resource Include="image\common\list\item_bg_selected.png" />
+    <Resource Include="image\common\list\listhead_arrow.png" />
+    <Resource Include="image\common\list\listhead_bkg.png" />
+    <Resource Include="image\common\list\listhead_btn.png" />
+    <Resource Include="image\common\list\listhead_check.png" />
+    <Resource Include="image\common\logo\main_logo.png" />
+    <Resource Include="image\common\menu\MenuBkg.png" />
+    <Resource Include="image\common\menu\MenuCheck.png" />
+    <Resource Include="image\common\menu\MenuIcon.png" />
+    <Resource Include="image\common\menu\MenuNormalBkg.png" />
+    <Resource Include="image\common\menu\MenuSpliter.png" />
+    <Resource Include="image\common\menu\PhotoViewer.png" />
+    <Resource Include="image\common\msgbox\Hand.ico" />
+    <Resource Include="image\common\msgbox\Hand.png" />
+    <Resource Include="image\common\msgbox\Information.ico" />
+    <Resource Include="image\common\msgbox\Information.png" />
+    <Resource Include="image\common\msgbox\MsgBoxBtn.png" />
+    <Resource Include="image\common\msgbox\Question.ico" />
+    <Resource Include="image\common\msgbox\Question.png" />
+    <Resource Include="image\common\msgbox\Success.ico" />
+    <Resource Include="image\common\msgbox\Success.png" />
+    <Resource Include="image\common\msgbox\Warning.ico" />
+    <Resource Include="image\common\msgbox\Warning.png" />
+    <Resource Include="image\common\pagectrl\NextBtn.png" />
+    <Resource Include="image\common\pagectrl\PreBtn.png" />
+    <Resource Include="image\common\progress\loading.gif" />
+    <Resource Include="image\common\progress\ProgBkg.png" />
+    <Resource Include="image\common\progress\ProgFrg.png" />
+    <Resource Include="image\common\scrollbar\scrollbar.bmp" />
+    <Resource Include="image\common\scrollbar\scrollbar.png" />
+    <Resource Include="image\common\scrollbar\scrollbar2.png" />
+    <Resource Include="image\common\scrollbar\vscrollbar.png" />
+    <Resource Include="image\common\system\btn_sys_close.png" />
+    <Resource Include="image\common\system\btn_sys_maximize.png" />
+    <Resource Include="image\common\system\btn_sys_minimize.png" />
+    <Resource Include="image\common\system\btn_sys_restore.png" />
+    <Resource Include="image\common\system\btn_sys_setting.png" />
+    <Resource Include="image\common\Toast\ToastBkg.png" />
+    <Resource Include="image\common\Toast\ToastFailBg.png" />
+    <Resource Include="image\common\Toast\ToastFailIco.png" />
+    <Resource Include="image\common\Toast\ToastLoading.gif" />
+    <Resource Include="image\common\Toast\ToastOkBg.png" />
+    <Resource Include="image\common\Toast\ToastOkIco.png" />
+    <Resource Include="image\common\Toast\ToastSVipBg.png" />
+    <Resource Include="image\common\Toast\ToastVipBg.png" />
+    <Resource Include="image\common\Toast\toast_close_black.png" />
+    <Resource Include="image\common\Toast\toast_close_white.png" />
+    <Resource Include="image\common\Toast\toast_gray_bkg.png" />
+    <Resource Include="image\common\window\MsgBxBk_New.png" />
+    <Resource Include="image\common\window\NoShadowWndBg.png" />
+    <Resource Include="image\common\window\PanelBkg.png" />
+    <Resource Include="image\common\window\PanelBkg2.png" />
+    <Resource Include="image\common\window\ShadowWndBg.png" />
+    <Resource Include="image\common\window\windowBkg.png" />
+    <Resource Include="image\CompressPackage\back_btn.png" />
+    <Resource Include="image\CompressPackage\ErrorTipDlg\errortip_buy_btn.png" />
+    <Resource Include="image\CompressPackage\ErrorTipDlg\errortip_guide_buy.png" />
+    <Resource Include="image\CompressPackage\ErrorTipDlg\errortip_guide_upgrade.png" />
+    <Resource Include="image\CompressPackage\ErrorTipDlg\errortip_upgrade_btn.png" />
+    <Resource Include="image\CompressPackage\eye_invisible.png" />
+    <Resource Include="image\CompressPackage\eye_visible.png" />
+    <Resource Include="image\CompressPackage\guide1_svip.png" />
+    <Resource Include="image\CompressPackage\guide1_vip.png" />
+    <Resource Include="image\CompressPackage\guide2_svip.png" />
+    <Resource Include="image\CompressPackage\guide3_vip.png" />
+    <Resource Include="image\CompressPackage\item_down_bg.png" />
+    <Resource Include="image\CompressPackage\item_hover_bg.png" />
+    <Resource Include="image\CompressPackage\item_normal_bg.png" />
+    <Resource Include="image\CompressPackage\list_bg.png" />
+    <Resource Include="image\CompressPackage\prepare_unzip.gif" />
+    <Resource Include="image\CompressPackage\progress_bg.png" />
+    <Resource Include="image\CompressPackage\progress_fg.png" />
+    <Resource Include="image\CompressPackage\select_frame.png" />
+    <Resource Include="image\CompressPackage\supervip_img.png" />
+    <Resource Include="image\CompressPackage\unziplist_empty.png" />
+    <Resource Include="image\CompressPackage\upgrade_svip.png" />
+    <Resource Include="image\CompressPackage\upgrade_svip_btn.png" />
+    <Resource Include="image\CompressPackage\upgrade_vip_btn.png" />
+    <Resource Include="image\CompressPackage\vip_img.png" />
+    <Resource Include="image\FileCategory\all.png" />
+    <Resource Include="image\FileCategory\app.png" />
+    <Resource Include="image\FileCategory\doc.png" />
+    <Resource Include="image\FileCategory\image.png" />
+    <Resource Include="image\FileCategory\music.png" />
+    <Resource Include="image\FileCategory\other.png" />
+    <Resource Include="image\FileCategory\seed.png" />
+    <Resource Include="image\FileCategory\video.png" />
+    <Resource Include="image\FilePropertyDlg\FileTypeBkg.png" />
+    <Resource Include="image\FileType\Big\ApkType.png" />
+    <Resource Include="image\FileType\Big\Apps.png" />
+    <Resource Include="image\FileType\Big\CADType.png" />
+    <Resource Include="image\FileType\Big\DocType.png" />
+    <Resource Include="image\FileType\Big\EpubType.png" />
+    <Resource Include="image\FileType\Big\ExeType.png" />
+    <Resource Include="image\FileType\Big\FolderType.png" />
+    <Resource Include="image\FileType\Big\GeneralType.png" />
+    <Resource Include="image\FileType\Big\ImgType.png" />
+    <Resource Include="image\FileType\Big\IpaType.png" />
+    <Resource Include="image\FileType\Big\KeyType.png" />
+    <Resource Include="image\FileType\Big\MusicType.png" />
+    <Resource Include="image\FileType\Big\NumbersType.png" />
+    <Resource Include="image\FileType\Big\OtherType.png" />
+    <Resource Include="image\FileType\Big\PagesType.png" />
+    <Resource Include="image\FileType\Big\PdfType.png" />
+    <Resource Include="image\FileType\Big\PptType.png" />
+    <Resource Include="image\FileType\Big\RarType.png" />
+    <Resource Include="image\FileType\Big\TorrentType.png" />
+    <Resource Include="image\FileType\Big\TxtType.png" />
+    <Resource Include="image\FileType\Big\VideoType.png" />
+    <Resource Include="image\FileType\Big\VsdType.png" />
+    <Resource Include="image\FileType\Big\XlsType.png" />
+    <Resource Include="image\FileType\Middle\ApkType.png" />
+    <Resource Include="image\FileType\Middle\Apps.png" />
+    <Resource Include="image\FileType\Middle\CADType.png" />
+    <Resource Include="image\FileType\Middle\DocType.png" />
+    <Resource Include="image\FileType\Middle\EpubType.png" />
+    <Resource Include="image\FileType\Middle\ExeType.png" />
+    <Resource Include="image\FileType\Middle\FolderType.png" />
+    <Resource Include="image\FileType\Middle\GeneralType.png" />
+    <Resource Include="image\FileType\Middle\ImgType.png" />
+    <Resource Include="image\FileType\Middle\IpaType.png" />
+    <Resource Include="image\FileType\Middle\KeyType.png" />
+    <Resource Include="image\FileType\Middle\MixFileType.png" />
+    <Resource Include="image\FileType\Middle\MusicType.png" />
+    <Resource Include="image\FileType\Middle\NumbersType.png" />
+    <Resource Include="image\FileType\Middle\OtherType.png" />
+    <Resource Include="image\FileType\Middle\PagesType.png" />
+    <Resource Include="image\FileType\Middle\PdfType.png" />
+    <Resource Include="image\FileType\Middle\PptType.png" />
+    <Resource Include="image\FileType\Middle\RarType.png" />
+    <Resource Include="image\FileType\Middle\TorrentType.png" />
+    <Resource Include="image\FileType\Middle\TxtType.png" />
+    <Resource Include="image\FileType\Middle\VideoType.png" />
+    <Resource Include="image\FileType\Middle\VsdType.png" />
+    <Resource Include="image\FileType\Middle\XlsType.png" />
+    <Resource Include="image\FileType\Small\ApkType.png" />
+    <Resource Include="image\FileType\Small\Apps.png" />
+    <Resource Include="image\FileType\Small\CADType.png" />
+    <Resource Include="image\FileType\Small\DocType.png" />
+    <Resource Include="image\FileType\Small\EpubType.png" />
+    <Resource Include="image\FileType\Small\ExeType.png" />
+    <Resource Include="image\FileType\Small\FolderType.png" />
+    <Resource Include="image\FileType\Small\GeneralType.png" />
+    <Resource Include="image\FileType\Small\ImgType.png" />
+    <Resource Include="image\FileType\Small\IpaType.png" />
+    <Resource Include="image\FileType\Small\KeyType.png" />
+    <Resource Include="image\FileType\Small\MixFileType.png" />
+    <Resource Include="image\FileType\Small\MusicType.png" />
+    <Resource Include="image\FileType\Small\NumbersType.png" />
+    <Resource Include="image\FileType\Small\OtherType.png" />
+    <Resource Include="image\FileType\Small\PagesType.png" />
+    <Resource Include="image\FileType\Small\PdfType.png" />
+    <Resource Include="image\FileType\Small\PptType.png" />
+    <Resource Include="image\FileType\Small\RarType.png" />
+    <Resource Include="image\FileType\Small\TorrentType.png" />
+    <Resource Include="image\FileType\Small\TxtType.png" />
+    <Resource Include="image\FileType\Small\VideoType.png" />
+    <Resource Include="image\FileType\Small\VsdType.png" />
+    <Resource Include="image\FileType\Small\XlsType.png" />
+    <Resource Include="image\FileVersionVipGuideDlg\fileversion_vip_bg.png" />
+    <Resource Include="image\FileVersionVipGuideDlg\fileversion_vip_img.png" />
+    <Resource Include="image\GarbageCleanDlg\attention.png" />
+    <Resource Include="image\GarbageCleanDlg\btn_back.png" />
+    <Resource Include="image\GarbageCleanDlg\btn_cancel_scan.png" />
+    <Resource Include="image\GarbageCleanDlg\btn_close.png" />
+    <Resource Include="image\GarbageCleanDlg\btn_keep.png" />
+    <Resource Include="image\GarbageCleanDlg\btn_minimize.png" />
+    <Resource Include="image\GarbageCleanDlg\btn_onekey_clean.png" />
+    <Resource Include="image\GarbageCleanDlg\cheer.png" />
+    <Resource Include="image\GarbageCleanDlg\done.png" />
+    <Resource Include="image\GarbageCleanDlg\empty.png" />
+    <Resource Include="image\GarbageCleanDlg\error.png" />
+    <Resource Include="image\GarbageCleanDlg\garbageclean_dlg_bg.png" />
+    <Resource Include="image\GarbageCleanDlg\garbage_clean_txt.png" />
+    <Resource Include="image\GarbageCleanDlg\group_beg.png" />
+    <Resource Include="image\GarbageCleanDlg\group_end.png" />
+    <Resource Include="image\GarbageCleanDlg\group_mid.png" />
+    <Resource Include="image\GarbageCleanDlg\line_left.png" />
+    <Resource Include="image\GarbageCleanDlg\line_left_2.png" />
+    <Resource Include="image\GarbageCleanDlg\line_right.png" />
+    <Resource Include="image\GarbageCleanDlg\line_right_2.png" />
+    <Resource Include="image\GarbageCleanDlg\list_mode.png" />
+    <Resource Include="image\GarbageCleanDlg\loading.png" />
+    <Resource Include="image\GarbageCleanDlg\logo.png" />
+    <Resource Include="image\GarbageCleanDlg\scan_done.gif" />
+    <Resource Include="image\GarbageCleanDlg\scan_dupfile_txt.png" />
+    <Resource Include="image\GarbageCleanDlg\scan_dup_file.png" />
+    <Resource Include="image\GarbageCleanDlg\scan_emptydir_txt.png" />
+    <Resource Include="image\GarbageCleanDlg\scan_empty_dir.png" />
+    <Resource Include="image\GarbageCleanDlg\scan_garbage_video.png" />
+    <Resource Include="image\GarbageCleanDlg\scan_progress_bg.png" />
+    <Resource Include="image\GarbageCleanDlg\scan_video_txt.png" />
+    <Resource Include="image\GarbageCleanDlg\select_scan_folder_bg.png" />
+    <Resource Include="image\GarbageCleanDlg\svip.png" />
+    <Resource Include="image\GarbageCleanDlg\SvipGuideDlg\buy_svip_dupfile.png" />
+    <Resource Include="image\GarbageCleanDlg\SvipGuideDlg\buy_svip_emptydir.png" />
+    <Resource Include="image\GarbageCleanDlg\SvipGuideDlg\buy_svip_garbagevideo.png" />
+    <Resource Include="image\GarbageCleanDlg\SvipGuideDlg\upgrade_svip_dupfile.png" />
+    <Resource Include="image\GarbageCleanDlg\SvipGuideDlg\upgrade_svip_emptydir.png" />
+    <Resource Include="image\GarbageCleanDlg\SvipGuideDlg\upgrade_svip_garbagevideo.png" />
+    <Resource Include="image\GarbageCleanDlg\svip_guide_mask.png" />
+    <Resource Include="image\GarbageCleanDlg\thumb_mode.png" />
+    <Resource Include="image\GarbageCleanDlg\video_bg.png" />
+    <Resource Include="image\GarbageCleanDlg\video_play_hover.png" />
+    <Resource Include="image\GarbageCleanDlg\video_play_normal.png" />
+    <Resource Include="image\ImageViewDlg\black_bg.png" />
+    <Resource Include="image\ImageViewDlg\btn_bottom_left.png" />
+    <Resource Include="image\ImageViewDlg\btn_bottom_left_disable.png" />
+    <Resource Include="image\ImageViewDlg\btn_bottom_right.png" />
+    <Resource Include="image\ImageViewDlg\btn_bottom_right_disable.png" />
+    <Resource Include="image\ImageViewDlg\btn_close.png" />
+    <Resource Include="image\ImageViewDlg\btn_delete.png" />
+    <Resource Include="image\ImageViewDlg\btn_detail.png" />
+    <Resource Include="image\ImageViewDlg\btn_detail_close.png" />
+    <Resource Include="image\ImageViewDlg\btn_download.png" />
+    <Resource Include="image\ImageViewDlg\btn_minsize.png" />
+    <Resource Include="image\ImageViewDlg\btn_resize.png" />
+    <Resource Include="image\ImageViewDlg\btn_resize_max.png" />
+    <Resource Include="image\ImageViewDlg\btn_rotate.png" />
+    <Resource Include="image\ImageViewDlg\btn_share.png" />
+    <Resource Include="image\ImageViewDlg\btn_zoom.png" />
+    <Resource Include="image\ImageViewDlg\collapse.png" />
+    <Resource Include="image\ImageViewDlg\detail_view_bg.png" />
+    <Resource Include="image\ImageViewDlg\dlg_mask_down.png" />
+    <Resource Include="image\ImageViewDlg\dlg_mask_top.png" />
+    <Resource Include="image\ImageViewDlg\expand.png" />
+    <Resource Include="image\ImageViewDlg\image_bottom_bg.png" />
+    <Resource Include="image\ImageViewDlg\image_bottom_bg_hover.png" />
+    <Resource Include="image\ImageViewDlg\image_bottom_default.png" />
+    <Resource Include="image\ImageViewDlg\image_bottom_mask.png" />
+    <Resource Include="image\ImageViewDlg\image_bottom_sel.png" />
+    <Resource Include="image\ImageViewDlg\image_bottom_sel_hover.png" />
+    <Resource Include="image\ImageViewDlg\image_defualt.png" />
+    <Resource Include="image\ImageViewDlg\image_failed.png" />
+    <Resource Include="image\ImageViewDlg\image_loading.gif" />
+    <Resource Include="image\ImageViewDlg\img_sep.png" />
+    <Resource Include="image\ImageViewDlg\left_btn.png" />
+    <Resource Include="image\ImageViewDlg\main_view_bg.png" />
+    <Resource Include="image\ImageViewDlg\right_btn.png" />
+    <Resource Include="image\ImageViewDlg\small_bottom_failed.png" />
+    <Resource Include="image\ImageViewDlg\zoom_progress_bar.png" />
+    <Resource Include="image\ImageViewDlg\zoom_progress_bg.png" />
+    <Resource Include="image\ImageViewDlg\zoom_slider_thumb.png" />
+    <Resource Include="image\ImageViewDlg\zoom_view_bg.png" />
+    <Resource Include="image\LoginDlg\btn_delete_account.png" />
+    <Resource Include="image\LoginDlg\btn_get_sms_password.png" />
+    <Resource Include="image\LoginDlg\btn_reg.png" />
+    <Resource Include="image\LoginDlg\CapTipBg.png" />
+    <Resource Include="image\LoginDlg\Combo_down.png" />
+    <Resource Include="image\LoginDlg\Combo_normal.png" />
+    <Resource Include="image\LoginDlg\DelBtn.png" />
+    <Resource Include="image\LoginDlg\icon_error_tip.png" />
+    <Resource Include="image\LoginDlg\img_btn_login.png" />
+    <Resource Include="image\LoginDlg\list_item_bg.png" />
+    <Resource Include="image\LoginDlg\logining.png" />
+    <Resource Include="image\LoginDlg\login_logo.png" />
+    <Resource Include="image\LoginDlg\logo_qq.png" />
+    <Resource Include="image\LoginDlg\logo_sinaweibo.png" />
+    <Resource Include="image\LoginDlg\logo_wechat.png" />
+    <Resource Include="image\LoginDlg\passwd.png" />
+    <Resource Include="image\LoginDlg\person.png" />
+    <Resource Include="image\LoginDlg\phone.png" />
+    <Resource Include="image\LoginDlg\qrcode.png" />
+    <Resource Include="image\LoginDlg\qrcode_fail.png" />
+    <Resource Include="image\LoginDlg\qrcode_guide.png" />
+    <Resource Include="image\LoginDlg\shortmessage.png" />
+    <Resource Include="image\LoginDlg\verify_code.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\AddFile.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\BottomItemBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\BottomItemDownBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\BottomItemHoverBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\Connecting.gif" />
+    <Resource Include="image\MainPanel\DataCablePanel\DelBtn.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\Error.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\FrameBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\Guide.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\MidItemBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\MidItemDownBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\MidItemHoverBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\OpenFileBtn.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\OpenFolderBtn.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PcFolderBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PcFolderDownBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PcFolderHoverBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PcItemBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PcItemDownBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PcItemHoverBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PcThumb.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\Phone.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PhoneFolderBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PhoneFolderDownBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PhoneFolderHoverBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PhoneItemBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PhoneItemDownBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PhoneItemHoverBkg.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\PhoneThumb.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\QrCode.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\SendBtn.png" />
+    <Resource Include="image\MainPanel\DataCablePanel\UpBtn.png" />
+    <Resource Include="image\MainPanel\DownAnimation\DownBkg.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\Backup.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\BtnBkg.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\DataCable.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\GarbageClean.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\Lock.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\New.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\Phone.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\Recycle.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\SvipOnly.png" />
+    <Resource Include="image\MainPanel\FunctionalBoxPanel\VipOnly.png" />
+    <Resource Include="image\MainPanel\LeftPanel\all_hover.png" />
+    <Resource Include="image\MainPanel\LeftPanel\all_normal.png" />
+    <Resource Include="image\MainPanel\LeftPanel\btn_openvip.png" />
+    <Resource Include="image\MainPanel\LeftPanel\myshare_hover.png" />
+    <Resource Include="image\MainPanel\LeftPanel\myshare_normal.png" />
+    <Resource Include="image\MainPanel\LeftPanel\newfunc.png" />
+    <Resource Include="image\MainPanel\LeftPanel\quota_guide_bg.png" />
+    <Resource Include="image\MainPanel\LeftPanel\recent_hover.png" />
+    <Resource Include="image\MainPanel\LeftPanel\recent_normal.png" />
+    <Resource Include="image\MainPanel\LeftPanel\recycle_hover.png" />
+    <Resource Include="image\MainPanel\LeftPanel\recycle_normal.png" />
+    <Resource Include="image\MainPanel\LeftPanel\safebox_hover.png" />
+    <Resource Include="image\MainPanel\LeftPanel\safebox_normal.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\address_bkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\back.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\drop.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\forward.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\PathNavigator\drop_down.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\PathNavigator\drop_right.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\PathNavigator\nav_bkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\PathNavigator\SubDirectoryPanel\background.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\PathNavigator\SubDirectoryPanel\directory.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\PathNavigator\SubDirectoryPanel\item_hover.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\PathNavigator\SubDirectoryPanel\item_normal.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\refresh.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\refreshing.gif" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\SearchBox\delete.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\SearchBox\seachbox_history_item_hover.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\SearchBox\seachbox_history_item_normal.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\SearchBox\search.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\SearchBox\searchbox_bkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\AddressPanel\SearchBox\searchbox_history_bkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\DragTip\drag_bkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\EditWnd\EditBkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\RecentPanel\del_record.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\RecentPanel\img_more.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\RecentPanel\record_type.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\RecentPanel\viewmore_btn.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SafeboxActivePanel\ActBtn.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SafeboxActivePanel\Edit.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SafeboxActivePanel\Lock.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SafeboxActivePanel\LockIco.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SafeboxActivePanel\SVCode.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SafeboxActivePanel\UnActTip.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\Bg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\CloseBtn.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\Cornel.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\SpeedupBtn.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\SpeedupExtend.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\Ticket.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\TicketBg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\TipSmile.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\TipTicket.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\SpeedupTip\UseTicket.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\backup.gif" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\error.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\loading.gif" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\lock.gif" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\manage.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\Net.gif" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\portable_dev.gif" />
+    <Resource Include="image\MainPanel\NetdiskPanel\StatusPanel\success.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\add.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\arrow.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\button_bkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\clear.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\createdir.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\createshare.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\delete.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\download.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\list.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\lock.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\more.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\moveout.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\offlinedownload.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\openfolder.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\sort.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\thumb.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\toolbar_bkg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\Toolbar\upload.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\EmptyView\empty.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\EmptyView\error.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\EmptyView\loading.gif" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\EmptyView\loading.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\GuideTipPanel\doc_tip.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\GuideTipPanel\down_arrow.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\GuideTipPanel\up_arrow.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\GuideTipPanel\zip_tip.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ListView\delete.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ListView\down.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ListView\fail.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ListView\pause.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ListView\share.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ListView\upload.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ListView\wait.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\btn_trans_del.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\fail.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\folder_upload.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\frame_select_bg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\item_bg_down.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\item_bg_hover.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\pause.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\trans_progress_bg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\trans_progress_fg.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\upload_hover.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\upload_normal.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\video_play_hover.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\video_play_normal.png" />
+    <Resource Include="image\MainPanel\NetdiskPanel\ViewContainerPanel\ThumbView\waiting.png" />
+    <Resource Include="image\MainPanel\PhonePanel\CallIn.png" />
+    <Resource Include="image\MainPanel\PhonePanel\CallOut.png" />
+    <Resource Include="image\MainPanel\PhonePanel\ConnectBtn.png" />
+    <Resource Include="image\MainPanel\PhonePanel\CopyMsgBtn.png" />
+    <Resource Include="image\MainPanel\PhonePanel\Disconnect.png" />
+    <Resource Include="image\MainPanel\PhonePanel\IconBackGray.png" />
+    <Resource Include="image\MainPanel\PhonePanel\ItemDownBkg.png" />
+    <Resource Include="image\MainPanel\PhonePanel\ItemHoverBkg.png" />
+    <Resource Include="image\MainPanel\PhonePanel\Msg.png" />
+    <Resource Include="image\MainPanel\PhonePanel\NewIcon.png" />
+    <Resource Include="image\MainPanel\PhonePanel\Phone.png" />
+    <Resource Include="image\MainPanel\PhonePanel\PhoneEmpty.png" />
+    <Resource Include="image\MainPanel\PhonePanel\PhoneError.png" />
+    <Resource Include="image\MainPanel\PhonePanel\PhoneGuide.png" />
+    <Resource Include="image\MainPanel\PhonePanel\PhoneLoading.png" />
+    <Resource Include="image\MainPanel\PhonePanel\PhoneOpPanelBkg.png" />
+    <Resource Include="image\MainPanel\PhonePanel\RefreshBtn.png" />
+    <Resource Include="image\MainPanel\PhonePanel\TabBtn.png" />
+    <Resource Include="image\MainPanel\PhonePanel\TabBtnUnsel.png" />
+    <Resource Include="image\MainPanel\PhonePanel\Unrecv.png" />
+    <Resource Include="image\MainPanel\ShareList\btn_cancel.png" />
+    <Resource Include="image\MainPanel\ShareList\btn_cancel_small.png" />
+    <Resource Include="image\MainPanel\ShareList\btn_copy.png" />
+    <Resource Include="image\MainPanel\ShareList\btn_copy2.png" />
+    <Resource Include="image\MainPanel\ShareList\btn_copy_small.png" />
+    <Resource Include="image\MainPanel\ShareList\empty.png" />
+    <Resource Include="image\MainPanel\ShareList\error.png" />
+    <Resource Include="image\MainPanel\ShareList\item_bg.png" />
+    <Resource Include="image\MainPanel\ShareList\normal.png" />
+    <Resource Include="image\MainPanel\ShareList\private.png" />
+    <Resource Include="image\MainPanel\SharePanel\AddBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\AddFriend\add_frame_bg.png" />
+    <Resource Include="image\MainPanel\SharePanel\AddFriend\btn_delete_text.png" />
+    <Resource Include="image\MainPanel\SharePanel\AddFriend\searchbox_input_bkg.png" />
+    <Resource Include="image\MainPanel\SharePanel\AddMemberBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\BackBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\DefImage.png" />
+    <Resource Include="image\MainPanel\SharePanel\DeleteBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\DelMember.png" />
+    <Resource Include="image\MainPanel\SharePanel\DownBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\Empty.png" />
+    <Resource Include="image\MainPanel\SharePanel\EmptySession.png" />
+    <Resource Include="image\MainPanel\SharePanel\FileFactory.png" />
+    <Resource Include="image\MainPanel\SharePanel\Friend.png" />
+    <Resource Include="image\MainPanel\SharePanel\FriendHover.png" />
+    <Resource Include="image\MainPanel\SharePanel\FriendSel.png" />
+    <Resource Include="image\MainPanel\SharePanel\Group.png" />
+    <Resource Include="image\MainPanel\SharePanel\GroupHover.png" />
+    <Resource Include="image\MainPanel\SharePanel\GroupOwner.png" />
+    <Resource Include="image\MainPanel\SharePanel\GroupSel.png" />
+    <Resource Include="image\MainPanel\SharePanel\ItemDownBkg.png" />
+    <Resource Include="image\MainPanel\SharePanel\ItemHoverBkg.png" />
+    <Resource Include="image\MainPanel\SharePanel\LeftPanelBkg.png" />
+    <Resource Include="image\MainPanel\SharePanel\MemberHoverBkg.png" />
+    <Resource Include="image\MainPanel\SharePanel\MsgLeftPanel.png" />
+    <Resource Include="image\MainPanel\SharePanel\MsgRightPanel.png" />
+    <Resource Include="image\MainPanel\SharePanel\People.png" />
+    <Resource Include="image\MainPanel\SharePanel\Session.png" />
+    <Resource Include="image\MainPanel\SharePanel\SessionArrow.png" />
+    <Resource Include="image\MainPanel\SharePanel\SessionHover.png" />
+    <Resource Include="image\MainPanel\SharePanel\SessionSel.png" />
+    <Resource Include="image\MainPanel\SharePanel\ShareBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\ShareFileBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\SystemMsgBkg.png" />
+    <Resource Include="image\MainPanel\SharePanel\TransferBtn.png" />
+    <Resource Include="image\MainPanel\SharePanel\UnreadBkg.png" />
+    <Resource Include="image\MainPanel\SharePanel\Update.png" />
+    <Resource Include="image\MainPanel\SharePanel\VideoPlayBtn.png" />
+    <Resource Include="image\MainPanel\TipPanel\OnlineEditDownTip.png" />
+    <Resource Include="image\MainPanel\TipPanel\OnlineEditUpTip.png" />
+    <Resource Include="image\MainPanel\TipPanel\TipBkg.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_close.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_maximize.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_message.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_minimize.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_restore.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_setting.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_sviprenew.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_tipclose.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_vipcenter.png" />
+    <Resource Include="image\MainPanel\TitlePanel\btn_viprenew.png" />
+    <Resource Include="image\MainPanel\TitlePanel\head.png" />
+    <Resource Include="image\MainPanel\TitlePanel\head_frame.png" />
+    <Resource Include="image\MainPanel\TitlePanel\logo.png" />
+    <Resource Include="image\MainPanel\TitlePanel\new.png" />
+    <Resource Include="image\MainPanel\TitlePanel\quota_tip_bg.png" />
+    <Resource Include="image\MainPanel\TitlePanel\red_bg.png" />
+    <Resource Include="image\MainPanel\TitlePanel\red_dot.png" />
+    <Resource Include="image\MainPanel\TitlePanel\svip_open.png" />
+    <Resource Include="image\MainPanel\TitlePanel\task_pause.png" />
+    <Resource Include="image\MainPanel\TitlePanel\task_running.gif" />
+    <Resource Include="image\MainPanel\TitlePanel\translucent.png" />
+    <Resource Include="image\MainPanel\TitlePanel\underline_hover.png" />
+    <Resource Include="image\MainPanel\TitlePanel\underline_normal.png" />
+    <Resource Include="image\MainPanel\TitlePanel\vip_close.png" />
+    <Resource Include="image\MainPanel\TitlePanel\vip_open.png" />
+    <Resource Include="image\MainPanel\TransLeftPanel\cloud_btn.png" />
+    <Resource Include="image\MainPanel\TransLeftPanel\download_btn.png" />
+    <Resource Include="image\MainPanel\TransLeftPanel\history_btn.png" />
+    <Resource Include="image\MainPanel\TransLeftPanel\upload_btn.png" />
+    <Resource Include="image\MainPanel\UserCard\btn_svip.png" />
+    <Resource Include="image\MainPanel\UserCard\btn_vip.png" />
+    <Resource Include="image\MainPanel\UserCard\notvip_bg.png" />
+    <Resource Include="image\MainPanel\UserCard\priv_5t_quota.png" />
+    <Resource Include="image\MainPanel\UserCard\priv_batch_upload.png" />
+    <Resource Include="image\MainPanel\UserCard\priv_bigfile_upload.png" />
+    <Resource Include="image\MainPanel\UserCard\priv_more.png" />
+    <Resource Include="image\MainPanel\UserCard\priv_speed_download.png" />
+    <Resource Include="image\MainPanel\UserCard\progress_gray.png" />
+    <Resource Include="image\MainPanel\UserCard\progress_green.png" />
+    <Resource Include="image\MainPanel\UserCard\progress_red.png" />
+    <Resource Include="image\MainPanel\UserCard\progress_yellow.png" />
+    <Resource Include="image\MainPanel\UserCard\svip_bg.png" />
+    <Resource Include="image\MainPanel\UserCard\tip_mask.png" />
+    <Resource Include="image\MainPanel\UserCard\vip_bg.png" />
+    <Resource Include="image\PortableDeviceBackupDlg\bg_list_view.png" />
+    <Resource Include="image\PortableDeviceBackupDlg\btn_onekey_backup.png" />
+    <Resource Include="image\PortableDeviceBackupDlg\image_default.png" />
+    <Resource Include="image\PortableDeviceBackupDlg\image_video.png" />
+    <Resource Include="image\PortableDeviceBackupDlg\item_deselected.png" />
+    <Resource Include="image\PortableDeviceBackupDlg\item_hover.png" />
+    <Resource Include="image\PortableDeviceBackupDlg\item_selected.png" />
+    <Resource Include="image\UserGuidePanel\abnormal_icon_attention.png" />
+    <Resource Include="image\UserGuidePanel\account_abnormal_bg.png" />
+    <Resource Include="image\VideoPlayDlg\big_progress_bar.png" />
+    <Resource Include="image\VideoPlayDlg\big_progress_bg.png" />
+    <Resource Include="image\VideoPlayDlg\bk_skin.png" />
+    <Resource Include="image\VideoPlayDlg\btn_play_control_bg.png" />
+    <Resource Include="image\VideoPlayDlg\btn_play_more.png" />
+    <Resource Include="image\VideoPlayDlg\btn_play_next.png" />
+    <Resource Include="image\VideoPlayDlg\btn_play_pre.png" />
+    <Resource Include="image\VideoPlayDlg\btn_reload_bg.png" />
+    <Resource Include="image\VideoPlayDlg\btn_replay.png" />
+    <Resource Include="image\VideoPlayDlg\captionbar_bg.png" />
+    <Resource Include="image\VideoPlayDlg\close_btn.png" />
+    <Resource Include="image\VideoPlayDlg\default_ad_image.png" />
+    <Resource Include="image\VideoPlayDlg\drag_left.png" />
+    <Resource Include="image\VideoPlayDlg\drag_right.png" />
+    <Resource Include="image\VideoPlayDlg\empty.png" />
+    <Resource Include="image\VideoPlayDlg\image_delete.png" />
+    <Resource Include="image\VideoPlayDlg\image_download.png" />
+    <Resource Include="image\VideoPlayDlg\image_share.png" />
+    <Resource Include="image\VideoPlayDlg\image_transfer.png" />
+    <Resource Include="image\VideoPlayDlg\loading.png" />
+    <Resource Include="image\VideoPlayDlg\MaskBg.png" />
+    <Resource Include="image\VideoPlayDlg\maxsize_normal_btn.png" />
+    <Resource Include="image\VideoPlayDlg\maxsize_recover_btn.png" />
+    <Resource Include="image\VideoPlayDlg\mini_progress_bar.png" />
+    <Resource Include="image\VideoPlayDlg\mini_progress_bg.png" />
+    <Resource Include="image\VideoPlayDlg\mini_progress_bg_volum.png" />
+    <Resource Include="image\VideoPlayDlg\mini_progress_volum_bar.png" />
+    <Resource Include="image\VideoPlayDlg\minsize_btn.png" />
+    <Resource Include="image\VideoPlayDlg\new.png" />
+    <Resource Include="image\VideoPlayDlg\overspeed\btn_overspeed_guidedlg_gray.png" />
+    <Resource Include="image\VideoPlayDlg\overspeed\btn_overspeed_guidedlg_red.png" />
+    <Resource Include="image\VideoPlayDlg\overspeed\btn_overspeed_item_blue.png" />
+    <Resource Include="image\VideoPlayDlg\overspeed\btn_overspeed_item_yellow.png" />
+    <Resource Include="image\VideoPlayDlg\overspeed\btn_overspeed_open_svip.png" />
+    <Resource Include="image\VideoPlayDlg\overspeed\overspeed_guidedlg_image.png" />
+    <Resource Include="image\VideoPlayDlg\overspeed\overspeed_svip.png" />
+    <Resource Include="image\VideoPlayDlg\playfinish_bg.png" />
+    <Resource Include="image\VideoPlayDlg\scrollbar.png" />
+    <Resource Include="image\VideoPlayDlg\skip_ad_bg.png" />
+    <Resource Include="image\VideoPlayDlg\slider.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\border.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\dropbtn.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\fontbtnadd.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\fontbtnsub.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\FontSize_line.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\font_size_big.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\font_size_small.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\op_close.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\op_failed.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\op_loading.gif" />
+    <Resource Include="image\VideoPlayDlg\subtitle\op_retry.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\op_success.png" />
+    <Resource Include="image\VideoPlayDlg\subtitle\slider_bg.png" />
+    <Resource Include="image\VideoPlayDlg\success_icon.png" />
+    <Resource Include="image\VideoPlayDlg\taskbar_bg.png" />
+    <Resource Include="image\VideoPlayDlg\time_tip_bg.png" />
+    <Resource Include="image\VideoPlayDlg\tip_bg.png" />
+    <Resource Include="image\VideoPlayDlg\tool_bar_bg.png" />
+    <Resource Include="image\VideoPlayDlg\underline_hover.png" />
+    <Resource Include="image\VideoPlayDlg\underline_normal.png" />
+    <Resource Include="image\VideoPlayDlg\VideoOpBkg.png" />
+    <Resource Include="image\VideoPlayDlg\video_fullscreen_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_halfscreen_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_next_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_pause_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_playlist_clear_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_playlist_close_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_playlist_delete.png" />
+    <Resource Include="image\VideoPlayDlg\video_playlist_open_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_playlist_playing.png" />
+    <Resource Include="image\VideoPlayDlg\video_playlist_sort_asc_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_playlist_sort_desc_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_play_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_pre_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_volum_btn.png" />
+    <Resource Include="image\VideoPlayDlg\video_volum_btn_disable.png" />
+    <Resource Include="image\VideoPlayDlg\volum_thumb_big.png" />
+    <Resource Include="image\VideoPlayDlg\volum_thumb_small.png" />
+    <Resource Include="image\VideoPlayDlg\words_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\MinFrm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\maxFrm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\CloseActive.png" />
+    <Resource Include="image\head.png" />
+    <Resource Include="image\huiyuan.png" />
+    <Resource Include="image\HuiyuanActive.png" />
+    <Resource Include="image\MailActive.png" />
+    <Resource Include="image\mail.png" />
+    <Resource Include="image\MaxFrmActive.png" />
+    <Resource Include="image\MinFrmActive.png" />
+    <Resource Include="image\normalFrm.png" />
+    <Resource Include="image\NormalFrmActive.png" />
+    <Resource Include="image\SettingActive.png" />
+    <Resource Include="image\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\addFile.png" />
+    <Resource Include="image\addfileActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\back.png" />
+    <Resource Include="image\backActive.png" />
+    <Resource Include="image\share.png" />
+    <Resource Include="image\shareActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\book.png" />
+    <Resource Include="image\bookActive.png" />
+    <Resource Include="image\clock.png" />
+    <Resource Include="image\clockActive.png" />
+    <Resource Include="image\lock.png" />
+    <Resource Include="image\lockActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\laji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\ConnectDev.png" />
+    <Resource Include="image\findBack.png" />
+    <Resource Include="image\UpBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SkyDrive_128px_1156945_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\5555.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\CompandPkg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\dll.png" />
+    <Resource Include="image\down.png" />
+    <Resource Include="image\downActive.png" />
+    <Resource Include="image\download.png" />
+    <Resource Include="image\downloadActive.png" />
+    <Resource Include="image\excel.png" />
+    <Resource Include="image\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\left.png" />
+    <Resource Include="image\leftActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\more.png" />
+    <Resource Include="image\moreActive.png" />
+    <Resource Include="image\nofile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\PDF.png" />
+    <Resource Include="image\refresh.png" />
+    <Resource Include="image\refreshActive.png" />
+    <Resource Include="image\right.png" />
+    <Resource Include="image\rightActive.png" />
+    <Resource Include="image\search.png" />
+    <Resource Include="image\searchActive.png" />
+    <Resource Include="image\seq.png" />
+    <Resource Include="image\seqActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\thumbnail.png" />
+    <Resource Include="image\thumbnailActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\upload.png" />
+    <Resource Include="image\uploadActive.png" />
+    <Resource Include="image\word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\friend.png" />
+    <Resource Include="image\friends.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\huihua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\shareEmply.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

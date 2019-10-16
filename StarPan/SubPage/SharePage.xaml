@@ -1,0 +1,42 @@
+﻿<Page x:Class="StarPan.SubPage.SharePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StarPan.SubPage"
+      mc:Ignorable="d" d:DesignWidth="800" 
+      Title="SharePage" >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--左边-->
+        <Border BorderBrush="{StaticResource Border.Split}" BorderThickness="1"  Width="60">
+            <StackPanel>
+                <StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Margin="0 100 0 0">
+                        <Image Source="../image/huihua.png" Width="32"></Image>
+                        <TextBlock Margin="0 5">会话</TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Margin="0 20">
+                        <Image Source="../image/friend.png" Width="32"></Image>
+                        <TextBlock>好友</TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="../image/friends.png" Width="32"></Image>
+                        <TextBlock>群组</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <!--右边-->
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <Image Source="../image/shareEmply.png" Width="364"></Image>
+            <Button Width="110" Height="35" Background="#06A8FF" BorderThickness="0"
+                    Foreground="White"
+                    >给好友分享文件</Button>
+        </StackPanel>
+    </Grid>
+</Page>

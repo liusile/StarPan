@@ -1,0 +1,47 @@
+﻿<Page x:Class="StarPan.SubPage.FunctionBoxPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StarPan.SubPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FunctionBoxPage">
+
+    <Page.Resources>
+        <Style TargetType="{x:Type StackPanel}"  x:Key="OpacityEvent">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Control.Opacity" Value="0.5"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <TextBlock FontWeight="Bold" FontSize="30" Foreground="#FF4C4949" HorizontalAlignment="Center" FontFamily="NSimSun">功能宝箱</TextBlock>
+        <TextBlock Foreground="#FF6F6E6E" FontSize="20" Margin="0,20,0,0" HorizontalAlignment="Center" Opacity="0.5">更多功能，带给您更贴心的体验</TextBlock>
+        <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+            <StackPanel Style="{StaticResource OpacityEvent}">
+                <Image Source="../image/laji.png" Width="64" Margin="50,0"></Image>
+                <TextBlock HorizontalAlignment="Center" Margin="0,9,0,0" Foreground="#FF4C4949" FontSize="15" FontFamily="NSimSun">垃圾文件清理</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="#FFA5A2A2" FontSize="13" FontFamily="NSimSun" Opacity="0.8">节省网盘空间</TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource OpacityEvent}">
+                <Image Source="../image/UpBar.png" Width="64" Margin="50,0"></Image>
+                <TextBlock HorizontalAlignment="Center" Margin="0,9,0,0" Foreground="#FF4C4949" FontSize="15" FontFamily="NSimSun">自动备份</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="#FFA5A2A2" FontSize="13" FontFamily="NSimSun" Opacity="0.8">即时备份，告别丢失</TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource OpacityEvent}">
+                <Image Source="../image/findBack.png" Width="64" Margin="50,0"></Image>
+                <TextBlock HorizontalAlignment="Center" Margin="0,9,0,0" Foreground="#FF4C4949" FontSize="15" FontFamily="NSimSun">回收站</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="#FFA5A2A2" FontSize="13" FontFamily="NSimSun" Opacity="0.8">帮你找回删除文件</TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource OpacityEvent}">
+                <Image Source="../image/ConnectDev.png" Width="64" Margin="50,0"></Image>
+                <TextBlock HorizontalAlignment="Center" Margin="0,9,0,0" Foreground="#FF4C4949" FontSize="15" FontFamily="NSimSun">数据线</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Foreground="#FFA5A2A2" FontSize="13" FontFamily="NSimSun" Opacity="0.8">手机和电脑无线传输</TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>
