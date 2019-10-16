@@ -9,44 +9,7 @@
       Title="MyPanPage" Background="White" Margin="0 -2 0 0">
 
     <Page.Resources>
-        <Style  TargetType="ListBox">
-            <Setter Property="ItemTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="item" Background="#F9FAFB" Width="206">
-                            <StackPanel  Orientation="Horizontal">
-                                <Border x:Name="leftMenuBorder" BorderBrush="#F9FAFB" BorderThickness="2"  Width="3"></Border>
-                                <StackPanel  Orientation="Horizontal">
-                                    <Image x:Name="BGimage" Source="{Binding Icon}" Width="15" Margin="15 10"></Image>
-                                    <TextBlock x:Name="leftMenuName" Text="{Binding Name}" HorizontalAlignment="Center" FontSize="15" FontFamily="Modern No. 20" Margin="5 10" ></TextBlock>
-                                </StackPanel>
-                            </StackPanel>
-
-                        </StackPanel>
-                        <DataTemplate.Triggers>
-                            <Trigger  Property="IsMouseOver" Value="true">
-                                <Setter TargetName="BGimage" Property="Source" Value="{Binding IconActive}" />
-                                <Setter TargetName="item" Property="Background" Value="#E0F2FB"/>
-                                <Setter TargetName="leftMenuName" Property="Foreground" Value="#64C5FB"/>
-                                <Setter TargetName="leftMenuBorder" Property="BorderBrush" Value="#64C5FB"/>
-                            </Trigger>
-
-                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource
-                                Mode=FindAncestor,
-                                AncestorType={x:Type ListBoxItem}},
-                                Path=IsSelected}" Value="True">
-                                <Setter TargetName="BGimage" Property="Source" Value="{Binding IconActive}" />
-                                <Setter TargetName="item" Property="Background" Value="#E0F2FB"/>
-                                <Setter TargetName="leftMenuName" Property="Foreground" Value="#64C5FB"/>
-                                <Setter TargetName="leftMenuBorder" Property="BorderBrush" Value="#64C5FB"/>
-                            </DataTrigger>
-                        </DataTemplate.Triggers>
-                    </DataTemplate>
-
-                </Setter.Value>
-            </Setter>
-
-        </Style>
+        <!--列项样式定义-->
         <Style TargetType="{x:Type ListViewItem}" x:Key="ListViewItemContainerStylePatientList">
             <Setter Property="FontSize" Value="10"/>
             <Setter Property="Height" Value="40"/>
@@ -71,11 +34,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-
-
-            <!--列头样式定义-->
-            <Style x:Key="ListViewHeaderPatientList" TargetType="{x:Type GridViewColumnHeader}">
+        <!--列头样式定义-->
+        <Style x:Key="ListViewHeaderPatientList" TargetType="{x:Type GridViewColumnHeader}">
                 <Setter Property="OverridesDefaultStyle" Value="True"/>
                 <Setter Property="FontSize" Value="12"/>
                 <Setter Property="Margin" Value="4,0"/>
@@ -105,7 +65,7 @@
          <!--左边菜单-->
         <StackPanel Background="#F9FAFB" Grid.Column="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <DockPanel>
-                <ListBox x:Name="nemuBox" DockPanel.Dock="Top" Background="#F9FAFB" BorderThickness="0"  Width="208" >
+                <ListBox x:Name="nemuBox" DockPanel.Dock="Top" Background="#F9FAFB" BorderThickness="0"  Width="208" Style="{StaticResource LeftTree}">
                     <ListBox.ItemContainerStyle >
                         <Style TargetType="ListBoxItem">
                             <Setter Property="BorderThickness" Value="0"></Setter>

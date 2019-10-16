@@ -74,6 +74,9 @@
     <Compile Include="SubPage\SharePage.xaml.cs">
       <DependentUpon>SharePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubPage\TransferPage.xaml.cs">
+      <DependentUpon>TransferPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SubPage\SharePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\TransferPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -887,6 +894,11 @@
   <ItemGroup>
     <Folder Include="image\BackupUnlockDlg\" />
     <Folder Include="image\BackupUpdateDlg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\complete.png" />
+    <Resource Include="image\completeActive.png" />
+    <Resource Include="image\downLarge.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

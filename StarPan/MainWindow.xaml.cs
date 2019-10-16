@@ -80,5 +80,10 @@ namespace StarPan
         {
             FrameContent.Source = new Uri("SubPage/SharePage.xaml", UriKind.Relative);
         }
+
+        private void DoloadList_Click(object sender, RoutedEventArgs e)
+        {
+            FrameContent.Source = new Uri("SubPage/TransferPage.xaml", UriKind.Relative);
+        }
     }
 }
