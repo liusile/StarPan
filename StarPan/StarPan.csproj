@@ -135,15 +135,6 @@
     <Resource Include="image\AutoupgradeSvipTipDlg\Guide.png" />
     <Resource Include="image\AutoupgradeSvipTipDlg\KnownBtn.png" />
     <Resource Include="image\AutoupgradeSvipTipDlg\MaskBg.png" />
-    <Resource Include="image\BackupUnlockDlg\backup_unlock_banner.png" />
-    <Resource Include="image\BackupUnlockDlg\upgrade_btn.png" />
-    <Resource Include="image\BackupUpdateDlg\backup_update_banner.png" />
-    <Resource Include="image\BackupUpdateDlg\backup_update_expired.png" />
-    <Resource Include="image\BackupUpdateDlg\btn_close.png" />
-    <Resource Include="image\BackupUpdateDlg\btn_grey.png" />
-    <Resource Include="image\BackupUpdateDlg\btn_red.png" />
-    <Resource Include="image\BackupUpdateDlg\btn_red_discount.png" />
-    <Resource Include="image\BackupUpdateDlg\MaskBg.png" />
     <Resource Include="image\BatchUploadPrivilegeDlg\BatchUploadPrivilegeGuide.png" />
     <Resource Include="image\BatchUploadPrivilegeDlg\VipBtn.png" />
     <Resource Include="image\common\button\button.png" />
@@ -892,6 +883,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\shareEmply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="image\BackupUnlockDlg\" />
+    <Folder Include="image\BackupUpdateDlg\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
