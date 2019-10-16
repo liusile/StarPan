@@ -17,8 +17,9 @@
             <StackPanel>
                 <StackPanel>
                     <StackPanel HorizontalAlignment="Center" Margin="0 100 0 0">
-                        <Image Source="../image/huihua.png" Width="32"></Image>
+                        <Image x:Name="BGimage" Source="../image/huihua.png" Width="32"></Image>
                         <TextBlock Margin="0 5">会话</TextBlock>
+                      
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Margin="0 20">
                         <Image Source="../image/friend.png" Width="32"></Image>

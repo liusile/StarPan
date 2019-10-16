@@ -40,10 +40,11 @@
         </Style>
     </Window.Resources>
     <DockPanel>
-        <DockPanel DockPanel.Dock="Top"  Background="#EEF0F6"  Height="63"  MouseDown="DockPanel_MouseDown">
+        <DockPanel DockPanel.Dock="Top"  Background="#EEF0F6"  Height="85"  MouseDown="DockPanel_MouseDown">
             <DockPanel>
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                    <Image Source="image/LoginDlg/login_logo.png" Width="138" Height="32" Margin="20 0 50 0"></Image>
+                    <Image Source="image/logo.png" Width="32" Height="32" Margin="15 0"></Image>
+                    <TextBlock VerticalAlignment="Center" FontSize="25" Margin="0 0 60 0">Star网盘</TextBlock>
                     <RadioButton x:Name="MyPan" IsChecked="True"  Content="我的网盘"  Style="{StaticResource TopFunctionStytle}" Click="MyPan_Click"/>
                     <RadioButton x:Name="DoloadList" Content="传输列表"  Style="{StaticResource  TopFunctionStytle}" Click="DoloadList_Click" />
                     <RadioButton x:Name="FriendSharing" Content="好友分享"  Style="{StaticResource  TopFunctionStytle}" Click="FriendSharing_Click" />
