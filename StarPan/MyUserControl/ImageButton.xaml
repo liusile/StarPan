@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="StarPan.MyUserControl.ImageButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StarPan.MyUserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
+    <UserControl.Resources>
+        <Style x:Key="LabelStyle1" TargetType="{x:Type RadioButton}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Content" Value=""/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                            <StackPanel>
+                                <Image x:Name="BGimage"  Width="32" Source="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=ImagSource}"></Image>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=Text}"></TextBlock>
+                                <!--<ContentPresenter  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>-->
+                            </StackPanel>
+                        </Border> 
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="BGimage" Property="Source" Value="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=ImageSourceActive}"/>
+                                <Setter  Property="Foreground" Value="#64C5FB"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="BGimage" Property="Source" Value="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=ImageSourceActive}"/>
+                                <Setter  Property="Foreground" Value="#64C5FB"/>
+                                <Setter  Property="Background" Value="#E0F2FB"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <RadioButton GroupName="rrr"  Style="{DynamicResource LabelStyle1}"/>
+</UserControl>

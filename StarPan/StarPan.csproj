@@ -62,9 +62,13 @@
     <Compile Include="Model\FileInfo.cs" />
     <Compile Include="Model\FileType.cs" />
     <Compile Include="Model\Menus.cs" />
+    <Compile Include="MyUserControl\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
+    <Content Include="ReadMe.txt" />
     <Compile Include="SubPage\FunctionBoxPage.xaml.cs">
       <DependentUpon>FunctionBoxPage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +93,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyUserControl\ImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -902,6 +910,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\huihuaActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\friendActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\friendsActive.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

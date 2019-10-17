@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:StarPan.SubPage"
       mc:Ignorable="d" d:DesignWidth="800" 
+      xmlns:uc="clr-namespace:StarPan.MyUserControl"
       Title="SharePage" >
 
     <Grid>
@@ -16,19 +17,13 @@
         <Border BorderBrush="{StaticResource Border.Split}" BorderThickness="1"  Width="60">
             <StackPanel>
                 <StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Margin="0 100 0 0">
-                        <Image x:Name="BGimage" Source="../image/huihua.png" Width="32"></Image>
-                        <TextBlock Margin="0 5">会话</TextBlock>
-                      
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Margin="0 20">
-                        <Image Source="../image/friend.png" Width="32"></Image>
-                        <TextBlock>好友</TextBlock>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center">
-                        <Image Source="../image/friends.png" Width="32"></Image>
-                        <TextBlock>群组</TextBlock>
-                    </StackPanel>
+                    <uc:ImageButton Text="会话"  HorizontalAlignment="Stretch"  Margin="0 30 0 0"  ImagSource="../image/huihua.png" ImageSourceActive="../image/huihuaActive.png"></uc:ImageButton>
+
+                    <uc:ImageButton Text="好友"  HorizontalAlignment="Stretch"   Margin="0 20"   ImagSource="../image/friend.png" ImageSourceActive="../image/friendActive.png"></uc:ImageButton>
+
+                    <uc:ImageButton Text="群组"  HorizontalAlignment="Stretch" ImagSource="../image/friends.png" ImageSourceActive="../image/friendsActive.png"></uc:ImageButton>
+                    
+                  
                 </StackPanel>
             </StackPanel>
         </Border>
