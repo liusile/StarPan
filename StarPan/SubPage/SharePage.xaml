@@ -17,22 +17,20 @@
         <Border BorderBrush="{StaticResource Border.Split}" BorderThickness="1"  Width="60">
             <StackPanel>
                 <StackPanel>
-                    <uc:ImageButton Text="会话"  HorizontalAlignment="Stretch"  Margin="0 30 0 0"  ImagSource="../image/huihua.png" ImageSourceActive="../image/huihuaActive.png"></uc:ImageButton>
+                    <uc:ImageButton Text="会话" x:Name="huihua"  HorizontalAlignment="Stretch"  Margin="0 30 0 0"  ImagSource="../image/huihua.png" ImageSourceActive="../image/huihuaActive.png" PreviewMouseLeftButtonDown="huihua_PreviewMouseLeftButtonDown"/>
 
-                    <uc:ImageButton Text="好友"  HorizontalAlignment="Stretch"   Margin="0 20"   ImagSource="../image/friend.png" ImageSourceActive="../image/friendActive.png"></uc:ImageButton>
+                    <uc:ImageButton Text="好友" x:Name="friend"  HorizontalAlignment="Stretch"   Margin="0 20"   ImagSource="../image/friend.png" ImageSourceActive="../image/friendActive.png" PreviewMouseLeftButtonDown="friend_PreviewMouseLeftButtonDown"/>
 
-                    <uc:ImageButton Text="群组"  HorizontalAlignment="Stretch" ImagSource="../image/friends.png" ImageSourceActive="../image/friendsActive.png"></uc:ImageButton>
-                    
-                  
+                    <uc:ImageButton Text="群组" x:Name="group" HorizontalAlignment="Stretch" ImagSource="../image/friends.png" ImageSourceActive="../image/friendsActive.png" PreviewMouseLeftButtonDown="group_PreviewMouseLeftButtonDown" />
+
+
                 </StackPanel>
             </StackPanel>
         </Border>
         <!--右边-->
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <Image Source="../image/shareEmply.png" Width="364"></Image>
-            <Button Width="110" Height="35" Background="#06A8FF" BorderThickness="0"
-                    Foreground="White"
-                    >给好友分享文件</Button>
+            <Frame x:Name="FrameContent"  NavigationUIVisibility="Hidden" Background="#FFFFFF"></Frame>
+           
         </StackPanel>
     </Grid>
 </Page>

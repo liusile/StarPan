@@ -45,5 +45,5 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <RadioButton GroupName="rrr"  Style="{DynamicResource LabelStyle1}"/>
+    <RadioButton GroupName="ImageButtonGP"  Style="{DynamicResource LabelStyle1}"/>
 </UserControl>

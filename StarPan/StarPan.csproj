@@ -68,6 +68,9 @@
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
+    <Content Include="image\employFriend.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ReadMe.txt" />
     <Compile Include="SubPage\FunctionBoxPage.xaml.cs">
       <DependentUpon>FunctionBoxPage.xaml</DependentUpon>
@@ -77,6 +80,15 @@
     </Compile>
     <Compile Include="SubPage\SharePage.xaml.cs">
       <DependentUpon>SharePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\SharePage_Friend.xaml.cs">
+      <DependentUpon>SharePage_Friend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\SharePage_Group.xaml.cs">
+      <DependentUpon>SharePage_Group.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\SharePage_HuiHua.xaml.cs">
+      <DependentUpon>SharePage_HuiHua.xaml</DependentUpon>
     </Compile>
     <Compile Include="SubPage\TransferPage.xaml.cs">
       <DependentUpon>TransferPage.xaml</DependentUpon>
@@ -110,6 +122,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SubPage\SharePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\SharePage_Friend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\SharePage_Group.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\SharePage_HuiHua.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

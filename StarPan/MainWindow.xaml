@@ -45,14 +45,13 @@
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
                     <Image Source="image/logo.png" Width="32" Height="32" Margin="15 0"></Image>
                     <TextBlock VerticalAlignment="Center" FontSize="25" Margin="0 0 60 0">Star网盘</TextBlock>
-                    <RadioButton x:Name="MyPan" IsChecked="True"  Content="我的网盘"  Style="{StaticResource TopFunctionStytle}" Click="MyPan_Click"/>
-                    <RadioButton x:Name="DoloadList" Content="传输列表"  Style="{StaticResource  TopFunctionStytle}" Click="DoloadList_Click" />
-                    <RadioButton x:Name="FriendSharing" Content="好友分享"  Style="{StaticResource  TopFunctionStytle}" Click="FriendSharing_Click" />
-                    <RadioButton x:Name="FunctionBox" Content="功能宝箱"  Style="{StaticResource  TopFunctionStytle}"  Click="FunctionBox_Click" />
-                    <RadioButton x:Name="FindResource" Content="找资源"  Style="{StaticResource  TopFunctionStytle}" />
+                    <RadioButton x:Name="MyPan" IsChecked="True"  Content="我的网盘"  Style="{StaticResource TopFunctionStytle}" Click="MyPan_Click" />
+                    <RadioButton x:Name="DoloadList" Content="传输列表"  Style="{StaticResource  TopFunctionStytle}"             Click="DoloadList_Click" />
+                    <RadioButton x:Name="FriendSharing" Content="好友分享"  Style="{StaticResource  TopFunctionStytle}"          Click="FriendSharing_Click" />
+                    <RadioButton x:Name="FunctionBox" Content="功能宝箱"  Style="{StaticResource  TopFunctionStytle}"            Click="FunctionBox_Click" />
+                    <RadioButton x:Name="FindResource" Content="找资源"  Style="{StaticResource  TopFunctionStytle}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Right" DockPanel.Dock="Right" >
-
                     <Image Source="image\head.png" Width="20" Margin="10 0 0 0" ></Image>
                     <TextBlock Text="连思达" Margin="10 5 0 0"></TextBlock>
                     <Image  Width="20" Margin="8 0 0 0" >
@@ -71,7 +70,6 @@
                     <Border BorderThickness="1" BorderBrush="#F7D07D" Background="#F7D07D" Padding="3" CornerRadius="10"  Margin="15 0 0 0">
                         <TextBlock Text="会员中心"></TextBlock>
                     </Border>
-
                     <Image Width="20" Margin="15 0 0 0" >
                         <Image.Resources>
                             <Style TargetType="{x:Type Image}">
@@ -96,7 +94,6 @@
                             </Style>
                         </Image.Resources>
                     </Image>
-
                     <Image Source="image\line.png" Width="15" Margin="10 0 0 0" ></Image>
                     <Image x:Name="minFrm"  Width="15" Margin="10 0 0 0" MouseDown="minFrm_MouseDown" >
                         <Image.Resources>

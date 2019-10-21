@@ -24,5 +24,21 @@ namespace StarPan.SubPage
         {
             InitializeComponent();
         }
+
+
+        private void huihua_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FrameContent.Source = new Uri("SharePage_HuiHua.xaml", UriKind.Relative);
+        }
+
+        private void friend_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FrameContent.Source = new Uri("SharePage_Friend.xaml", UriKind.Relative);
+        }
+
+        private void group_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FrameContent.Source = new Uri("SharePage_Group.xaml", UriKind.Relative);
+        }
     }
 }
