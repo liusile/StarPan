@@ -68,9 +68,20 @@
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubPage\TransferPage_completeload.xaml.cs">
+      <DependentUpon>TransferPage_completeload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\TransferPage_download.xaml.cs">
+      <DependentUpon>TransferPage_download.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubPage\TransferPage_upload.xaml.cs">
+      <DependentUpon>TransferPage_upload.xaml</DependentUpon>
+    </Compile>
     <Content Include="image\employFriend.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="image\Transfer_upload.png" />
+    <Resource Include="image\fly.png" />
     <Content Include="ReadMe.txt" />
     <Compile Include="SubPage\FunctionBoxPage.xaml.cs">
       <DependentUpon>FunctionBoxPage.xaml</DependentUpon>
@@ -138,6 +149,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SubPage\TransferPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\TransferPage_completeload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\TransferPage_download.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubPage\TransferPage_upload.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

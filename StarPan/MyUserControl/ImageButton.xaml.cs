@@ -45,7 +45,9 @@ namespace StarPan.MyUserControl
             DependencyProperty.Register("ImageSourceActive", typeof(string), typeof(ImageButton));
 
 
-
+        /// <summary>
+        /// 定义依赖属性
+        /// </summary>
         public string Text
         {
             get { return (string)GetValue(TextProperty); }
@@ -56,11 +58,24 @@ namespace StarPan.MyUserControl
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(ImageButton));
 
-
+        /// <summary>
+        /// 暴露内部控件属性
+        /// </summary>
+        public bool? IsChecked
+        {
+            get {
+                return this.rdoBtn.IsChecked;
+            } 
+            set {
+                this.rdoBtn.IsChecked = value;
+            }
+        }
 
         public ImageButton()
         {
             InitializeComponent();
+
+            this.DataContext = this;
         }
     }
 }

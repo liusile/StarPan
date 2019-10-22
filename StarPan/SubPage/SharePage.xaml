@@ -17,7 +17,7 @@
         <Border BorderBrush="{StaticResource Border.Split}" BorderThickness="1"  Width="60">
             <StackPanel>
                 <StackPanel>
-                    <uc:ImageButton Text="会话" x:Name="huihua"  HorizontalAlignment="Stretch"  Margin="0 30 0 0"  ImagSource="../image/huihua.png" ImageSourceActive="../image/huihuaActive.png" PreviewMouseLeftButtonDown="huihua_PreviewMouseLeftButtonDown"/>
+                    <uc:ImageButton IsChecked="true"  Text="会话" x:Name="huidhua"  HorizontalAlignment="Stretch"  Margin="0 30 0 0"  ImagSource="../image/huihua.png" ImageSourceActive="../image/huihuaActive.png" PreviewMouseLeftButtonDown="huihua_PreviewMouseLeftButtonDown"/>
 
                     <uc:ImageButton Text="好友" x:Name="friend"  HorizontalAlignment="Stretch"   Margin="0 20"   ImagSource="../image/friend.png" ImageSourceActive="../image/friendActive.png" PreviewMouseLeftButtonDown="friend_PreviewMouseLeftButtonDown"/>
 

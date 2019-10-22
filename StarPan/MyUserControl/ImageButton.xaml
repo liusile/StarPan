@@ -21,8 +21,8 @@
                     <ControlTemplate TargetType="{x:Type RadioButton}">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
                             <StackPanel>
-                                <Image x:Name="BGimage"  Width="32" Source="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=ImagSource}"></Image>
-                                <TextBlock HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=Text}"></TextBlock>
+                                <Image x:Name="BGimage"  Width="32" Source="{Binding Path=ImagSource}"></Image>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Text}"></TextBlock>
                                 <!--<ContentPresenter  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>-->
                             </StackPanel>
                         </Border> 
@@ -31,7 +31,10 @@
                                 <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="BGimage" Property="Source" Value="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=ImageSourceActive}"/>
+                                <!--相对定位查找数据源方式-->
+                                <!--<Setter TargetName="BGimage" Property="Source" Value="{Binding RelativeSource={RelativeSource   Mode= FindAncestor,  AncestorType={x:Type local:ImageButton}}, Path=ImageSourceActive}"/>-->
+                                <!--后台绑定数据源方式-->
+                                <Setter TargetName="BGimage" Property="Source" Value="{Binding Path=ImageSourceActive}"/>
                                 <Setter  Property="Foreground" Value="#64C5FB"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="true">
@@ -45,5 +48,5 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <RadioButton GroupName="ImageButtonGP"  Style="{DynamicResource LabelStyle1}"/>
+    <RadioButton x:Name="rdoBtn" GroupName="ImageButtonGP"  Style="{DynamicResource LabelStyle1}"/>
 </UserControl>

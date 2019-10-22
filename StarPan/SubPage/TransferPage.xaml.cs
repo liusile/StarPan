@@ -31,6 +31,26 @@ namespace StarPan.SubPage
                 new Menus{ Name="传输完成",Icon=@"..\image\complete.png",IconActive=@"..\image\completeActive.png"}
             };
             nemuBox.ItemsSource = menus;
+            nemuBox.SelectedIndex = 0;
+        }
+
+        private void nemuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var index = nemuBox.SelectedIndex;
+            if (index == 0)
+            {
+                FrameContent.Source = new Uri("TransferPage_download.xaml", UriKind.Relative);
+            }
+            else if (index == 1)
+            {
+                FrameContent.Source = new Uri("TransferPage_upload.xaml", UriKind.Relative);
+            }
+            else if (index == 2)
+            {
+                FrameContent.Source = new Uri("TransferPage_completeload.xaml", UriKind.Relative);
+            }
+
+
         }
     }
 }

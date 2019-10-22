@@ -23,6 +23,7 @@ namespace StarPan.SubPage
         public SharePage()
         {
             InitializeComponent();
+            huihua_PreviewMouseLeftButtonDown(null, null);
         }
 
 

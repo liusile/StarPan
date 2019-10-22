@@ -53,7 +53,22 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Right" DockPanel.Dock="Right" >
                     <Image Source="image\head.png" Width="20" Margin="10 0 0 0" ></Image>
-                    <TextBlock Text="连思达" Margin="10 5 0 0"></TextBlock>
+                    <TextBlock Text="连思达" Margin="10 5 0 0">
+                        <!--<TextBlock.ToolTip>
+                            <Border Background="#FFFFFF" Margin="0,0,-4,-3">
+                                <StackPanel>
+                                    <TextBlock>连思达</TextBlock>
+                                    <StatusBar ></StatusBar>
+                                    <TextBlock>53G/2055G</TextBlock>
+                                    <TextBlock>超级会员尊享15项特权</TextBlock>
+                                    <TextBlock>个人中心</TextBlock>
+                                    <TextBlock>帮助中心</TextBlock>
+                                    <TextBlock>切换账号</TextBlock>
+                                    <TextBlock>退出</TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </TextBlock.ToolTip>-->
+                    </TextBlock>
                     <Image  Width="20" Margin="8 0 0 0" >
                         <Image.Resources>
                             <Style TargetType="{x:Type Image}">

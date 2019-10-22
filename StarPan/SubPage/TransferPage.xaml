@@ -9,8 +9,8 @@
       Title="TransferPage">
     <DockPanel>
         <Border BorderBrush="{StaticResource Border.Split}" BorderThickness="1" Width="150" DockPanel.Dock="Left">
-            <ListBox x:Name="nemuBox" DockPanel.Dock="Top" Background="#F9FAFB" BorderThickness="0"  Width="208" Style="{StaticResource LeftTree}">
-                <ListBox.ItemContainerStyle >
+            <ListBox x:Name="nemuBox" DockPanel.Dock="Top" Background="#F9FAFB" BorderThickness="0"  Width="208" Style="{StaticResource LeftTree}" SelectionChanged="nemuBox_SelectionChanged">
+                <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="BorderThickness" Value="0"></Setter>
                         <Setter Property="Padding" Value="0"></Setter>
@@ -18,9 +18,8 @@
                 </ListBox.ItemContainerStyle>
             </ListBox>
         </Border>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <Image Source="../image/downLarge.png" Width="128"></Image>
-            <TextBlock FontSize="15" Margin="0 30">当前没有下载任务喔~</TextBlock>
+        <StackPanel>
+            <Frame x:Name="FrameContent"  NavigationUIVisibility="Hidden" ></Frame>
         </StackPanel>
     </DockPanel>
 </Page>
